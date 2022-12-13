@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add card list</title>
+    <link rel="stylesheet" href="addcard.css">
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <header>
+            <h1>shopping list</h1>
+        </header>
+
+        <div class="heading">
+            <h3>add new products</h3>
+            <form action="">
+                <div class="addproduct">
+                    <label for="">Section</label><br>
+                    <select id="product">
+                        <option value="" selected disabled>category</option>
+                        <option value="Fruits& Vegetables">Fruits& Vegetables</option>
+                        <option value="Meat & Seafood">Meat & Seafood</option>
+                        <option value="Dairy">Dairy</option>
+                        <option value="Forzen Foods">Forzen Foods</option>
+                        <option value="Breads & Pasta">Breads & Pasta</option>
+                        <option value="Snacks">Snacks</option>
+                        <option value="Beverages">Beverages</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Others">Others</option>
+                    </select><br>
+                    <label for="">Quntity</label><br>
+                    <input type="text" id="Quntity">
+                </div>
+                <label for="">name</label><br>
+                <input type="text" id="name"><br>
+
+
+                <input type="submit" value=" add to list">
+                <!-- <button>add to list</button> -->
+            </form>
+        </div>
+
+
+
+        <div class="contant">
+            <div class="box">
+                <h2 class="h1">Fruits& Vegetables</h2>
+
+
+
+            </div>
+            <div class="box">
+                <h2 class="h2">Meat & Seafood</h2>
+
+
+
+            </div>
+            <div class="box">
+                <h2 class="h3">Dairy</h2>
+
+            </div>
+            <div class="box">
+                <h2 class="h4">Forzen Foods</h2>
+
+            </div>
+            <div class="box">
+                <h2 class="h5">Breads & Pasta</h2>
+
+            </div>
+            <div class="box">
+                <h2 class="h6">Snacks</h2>
+
+            </div>
+            <div class="box">
+                <h2 class="h7">Beverages</h2>
+
+            </div>
+            <div class="box">
+                <h2 class="h8">Cleaning</h2>
+
+            </div>
+            <div class="box">
+                <h2 class="h9">Others</h2>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        let product = document.querySelector("#product")
+        let option = document.querySelectorAll("option")
+        let Quntity = document.querySelector("#Quntity")
+        let name = document.querySelector("#name")
+        let button = document.querySelector("button")
+        let form = document.querySelector("form")
+       
+        let h2 = document.querySelectorAll("h2")
+
+
+
+        form.onsubmit = (e) => {
+            e.preventDefault()
+            for (let i = 0; i <product.length; i++) {
+                for (let j = 0; j < h2.length; j++) {
+                    console.log(h2.value)
+                    if (product[i].value === h2[j]) {
+                        
+                        let para = document.createElement("p")
+                        let app = h2[j].appendChild(para)
+                        document.querySelector("h2").insertAdjacentElement("afterend", app)
+                        app.innerHTML = console.log(name.value + "" + Quntity.value)
+                    }
+                }
+
+                //             if(option[i].value === "Meat & Seafood"){
+                //                 console.log("shyam")
+                //     asd2.innerHTML =    name.value + ""+ Quntity.value
+                // } 
+                // else{
+                // }
+
+                // if(option[i].value === "Breads & Pasta"){
+                //     console.log( name.value + ""+ Quntity.value)
+
+                //     // let as =document.createElement("p")
+                //     //  let aa= asd.appendChild(as)
+
+                //     asd5.innerHTML =    name.value + ""+ Quntity.value
+                //   } 
+                // else{
+
+                // }
+
+
+
+
+
+                // }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
