@@ -23,11 +23,11 @@
                     <label for="">Section</label><br>
                     <select id="product">
                         <option value="" selected disabled>category</option>
-                        <option value="Fruits& Vegetables">Fruits& Vegetables</option>
-                        <option value="Meat & Seafood">Meat & Seafood</option>
+                        <option value="Fruits-Vegetables">Fruits& Vegetables</option>
+                        <option value="Meat-Seafood">Meat & Seafood</option>
                         <option value="Dairy">Dairy</option>
                         <option value="Forzen Foods">Forzen Foods</option>
-                        <option value="Breads & Pasta">Breads & Pasta</option>
+                        <option value="Breads-Pasta">Breads & Pasta</option>
                         <option value="Snacks">Snacks</option>
                         <option value="Beverages">Beverages</option>
                         <option value="Cleaning">Cleaning</option>
@@ -48,22 +48,24 @@
 
 
         <div class="contant">
-            <div class="Fruits& Vegetables">
+            <div class="Fruits-Vegetables">
                 <div class="box">
 
                     <h2 class="h1">Fruits& Vegetables</h2>
+                    <div class="con"></div>
 
 
 
                 </div>
-                <div class="con"></div>
+
             </div>
-            <div class="Meat & Seafood">
+            <div class="Meat-Seafood">
                 <div class="box">
 
                     <h2 class="h2">Meat & Seafood</h2>
+                    <div class="con"></div>
                 </div>
-                <div class="con"></div>
+
 
 
             </div>
@@ -71,53 +73,59 @@
                 <div class="box">
 
                     <h2 class="h3">Dairy</h2>
+                    <div class="con"></div>
                 </div>
-                <div class="con"></div>
+
             </div>
-            <div class="Forzen Foods">
+            <div class="Forzen-Foods">
                 <div class="box">
-
                     <h2 class="h4">Forzen Foods</h2>
+                    <div class="con"></div>
                 </div>
-                <div class="con"></div>
+
 
             </div>
-            <div class="Breads & Pasta">
+            <div class="Breads-Pasta">
                 <div class="box">
                     <h2 class="h5">Breads & Pasta</h2>
+                    <div class="con"></div>
                 </div>
-                <div class="con"></div>
+
 
 
             </div>
             <div class="Snacks">
                 <div class="box">
                     <h2 class="h6">Snacks</h2>
+                    <div class="con"></div>
                 </div>
-                <div class="con"></div>
+
 
 
             </div>
             <div class="Beverages">
                 <div class="box">
                     <h2 class="h7">Beverages</h2>
+                    <div class="con"></div>
                 </div>
-                <div class="con"></div>
+
 
 
             </div>
             <div class="Cleaning">
                 <div class="box">
                     <h2 class="h8">Cleaning</h2>
+                    <div class="con"></div>
                 </div>
-                <div class="con"></div>
+
 
             </div>
             <div class="Others">
                 <div class="box">
                     <h2 class="h9">Others</h2>
+                    <div class="con"></div>
                 </div>
-                <div class="con"></div>
+
             </div>
 
 
@@ -129,7 +137,6 @@
 
         let button = document.querySelector("button")
         let form = document.querySelector("form")
-        let box = document.querySelectorAll(".box")
         let contant = document.querySelector(".contant")
 
 
@@ -138,11 +145,12 @@
 
         form.onsubmit = (e) => {
             e.preventDefault()
-            const select = document.querySelector("select")
+            let select = document.querySelector("select")
             let Quntity = document.querySelector("#Quntity")
             let name = document.querySelector("#name")
 
             let para = document.createElement("p")
+            para.classList.add("space")
 
 
             let nameText = document.createElement("span")
@@ -150,14 +158,13 @@
             para.appendChild(nameText)
 
             let Quntitytext = document.createElement("span")
-
             Quntitytext.innerText = Quntity.value
             para.appendChild(Quntitytext)
 
 
             document.querySelector(".contant ." + select.value + " .con").appendChild(para)
 
-           form.reset()
+            form.reset()
 
 
         }
